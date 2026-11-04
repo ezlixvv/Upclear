@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UpClear – Sube a TikTok sin perder nitidez</title>
+<meta name="description" content="UpClear revisa la resolución, los fps y el bitrate de tu video antes de subirlo a TikTok y arregla los bloqueos de subida.">
+<meta name="theme-color" content="#050308">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UpClear – Sube a TikTok sin perder nitidez">
+<meta property="og:description" content="Revisa la calidad de tu video antes de publicar y arregla los bloqueos de subida.">
+<meta property="og:image" content="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050308;--card:#0f0a18;--line:#2a1d44;--text:#f3ecff;--muted:#9a8db3;--p:#a855f7;--p2:#7c3aed;--ok:#5fe3a1;color-scheme:dark;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);font:400 17px/1.55 "Instrument Sans",system-ui,sans-serif;
+ background:radial-gradient(900px 420px at 50% -80px,#6d28d94d,transparent),
+ radial-gradient(1.5px 1.5px at 10% 18%,#fff9 50%,transparent),radial-gradient(1px 1px at 78% 10%,#fff8 50%,transparent),
+ radial-gradient(2px 2px at 88% 46%,#c084fcaa 50%,transparent),radial-gradient(1px 1px at 22% 64%,#fff6 50%,transparent),
+ radial-gradient(1.5px 1.5px at 60% 88%,#fff6 50%,transparent),var(--bg)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{display:flex;align-items:center;gap:10px;font:800 26px "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em;text-decoration:none}
+.logo svg{width:40px;height:40px}.logo b{color:#c084fc}
+.btn{display:inline-block;padding:13px 24px;border-radius:14px;font-weight:600;text-decoration:none;color:#fff;background:linear-gradient(135deg,#c084fc,#7c3aed);box-shadow:0 8px 30px #7c3aed55}
+.btn.ghost{background:none;border:1px solid var(--line);box-shadow:none}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--p);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:56px 0 72px}
+h1{font:800 clamp(40px,6.4vw,68px)/1.02 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.03em;margin:0 0 18px}
+.lead{color:var(--muted);max-width:46ch;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.card{background:#0f0a18cc;border:1px solid var(--line);border-radius:20px;padding:20px;backdrop-filter:blur(8px)}
+.mock{display:grid;gap:14px;box-shadow:0 20px 80px #7c3aed33}
+.status{display:flex;gap:8px;align-items:center;font:600 12px ui-monospace,monospace;color:#c084fc}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
+.row{display:flex;gap:12px;align-items:center}.grow{flex:1}
+.row h3{margin:0;font-size:18px}.row p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.sw{width:50px;height:30px;border-radius:15px;background:var(--p2);position:relative;flex:none}
+.sw::after{content:"";position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:#fff}
+.opt{padding:12px 14px;border:1px solid var(--line);border-radius:14px}
+.opt.on{border-color:var(--p);background:#a855f71a}
+.opt b{display:block}.opt small{color:var(--muted);font-size:14px}
+h2{font:800 clamp(28px,4vw,42px)/1.1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:0 0 28px}
+section{padding:44px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.grid h3{margin:0 0 6px;font:600 19px "Instrument Sans",sans-serif}
+.grid p{margin:0;color:var(--muted);font-size:15px}
+.step{font:800 34px "Bricolage Grotesque",sans-serif;color:#c084fc;margin-bottom:6px}
+.price{font:800 42px "Bricolage Grotesque",sans-serif;margin:8px 0 14px}
+.plan ul{padding-left:18px;margin:0 0 18px;color:var(--muted);font-size:15px}
+.plan.pop{border-color:var(--p);box-shadow:0 0 40px #7c3aed40}
+.card ol{margin:0 0 18px;padding-left:20px;color:var(--muted);font-size:15px}.card ol li{margin-bottom:6px}
+.note{color:var(--muted);font-size:14px;margin:18px 0 0}
+footer{border-top:1px solid #ffffff14;padding:28px 0 36px;color:var(--muted);font-size:14px}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:24px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c084fc"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+<symbol id="ic" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="url(#g)"/><path d="M18 24v10a14 14 0 0 0 28 0V24" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M32 38V15M24 23l8-8 8 8" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M51 6l1.8 4.2L57 12l-4.2 1.8L51 18l-1.8-4.2L45 12l4.2-1.8z" fill="#fff"/></symbol></defs></svg>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#"><svg aria-hidden="true"><use href="#ic"/></svg><span>Up<b>Clear</b></span></a>
+    <a class="btn ghost" href="#planes">Ver planes</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Sube a TikTok sin perder nitidez.</h1>
+      <p class="lead">UpClear revisa tu video antes de publicarlo y te avisa si la resolución, los fps o el bitrate van a empeorar la calidad. También arregla los bloqueos de subida.</p>
+      <div class="cta">
+        <a class="btn" href="#instalar">Instalar la extensión</a>
+        <a class="btn ghost" href="https://t.me/UpClear_Bot" target="_blank" rel="noopener">Abrir el bot de Telegram</a>
+      </div>
+    </div>
+    <div class="card mock" aria-label="Vista previa de la extensión">
+      <div class="status"><i class="dot"></i>Activo</div>
+      <div class="row"><div class="grow"><h3>Método de subida</h3><p>Analiza tu video antes de publicar.</p></div><div class="sw"></div></div>
+      <div class="opt on"><b>Revisión de calidad</b><small>Muestra resolución, fps y bitrate, y avisa si algo baja la calidad.</small></div>
+      <div class="opt"><b>Estándar</b><small>Subes tu video sin ningún aviso ni cambio.</small></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Qué hace la extensión</h2>
+    <div class="grid">
+      <div class="card"><h3>Revisión de calidad</h3><p>Al elegir un video en TikTok ves su resolución, fps y bitrate, y qué cambiar si algo está por debajo de lo recomendado.</p></div>
+      <div class="card"><h3>Arreglar subida</h3><p>Borra la cookie ttwid con un clic cuando un video se queda cargando o falla al subir.</p></div>
+      <div class="card"><h3>Limpiar reposts</h3><p>En desarrollo: quitar tus reposts del perfil de forma masiva.</p></div>
+    </div>
+    <p class="note">TikTok vuelve a comprimir todos los videos en sus servidores. UpClear no puede evitarlo, pero te ayuda a subir el mejor archivo posible.</p>
+  </section>
+
+  <section>
+    <h2>Empieza en tres pasos</h2>
+    <div class="grid">
+      <div class="card"><div class="step">1</div><h3>Instala la extensión</h3><p>Añádela a Chrome y fíjala en la barra.</p></div>
+      <div class="card"><div class="step">2</div><h3>Inicia sesión con el bot</h3><p>Pulsa «Iniciar sesión con Telegram», abre el bot y toca Start.</p></div>
+      <div class="card"><div class="step">3</div><h3>Sube tu video</h3><p>Elige el archivo en TikTok y revisa el resultado antes de publicar.</p></div>
+    </div>
+  </section>
+
+    <section id="instalar">
+    <h2>Instala la extensión</h2>
+    <div class="card" style="max-width:560px">
+      <ol>
+        <li>Descarga el archivo y descomprímelo.</li>
+        <li>Abre <b>chrome://extensions</b> y activa el <b>Modo de desarrollador</b>.</li>
+        <li>Pulsa «Cargar descomprimida» y elige la carpeta.</li>
+      </ol>
+      <a class="btn" href="upclear-extension.zip" download>Descargar extensión</a>
+    </div>
+  </section>
+
+  <section id="planes">
+    <h2>Planes</h2>
+    <div class="grid">
+      <div class="card plan"><h3>Gratis</h3><div class="price">$0</div><ul><li>Revisión de calidad</li><li>Arreglar subida</li></ul><a class="btn ghost" href="https://t.me/UpClear_Bot" target="_blank" rel="noopener">Empezar</a></div>
+      <div class="card plan"><h3>1 mes</h3><div class="price">$9.99</div><ul><li>Todo lo gratuito</li><li>Herramientas nuevas primero</li></ul><a class="btn ghost" href="https://t.me/UpClear_Bot" target="_blank" rel="noopener">Comprar</a></div>
+      <div class="card plan pop"><h3>3 meses</h3><div class="price">$24.99</div><ul><li>Todo lo del plan mensual</li><li>Ahorras frente a pagar cada mes</li></ul><a class="btn" href="https://t.me/UpClear_Bot" target="_blank" rel="noopener">Comprar</a></div>
+    </div>
+  </section>
+</div>
+<footer><div class="wrap">UpClear no está afiliado ni respaldado por TikTok. TikTok es una marca de sus respectivos dueños.</div></footer>
+</body>
+</html>
